@@ -3,6 +3,7 @@ import { baseUrl, getRequest } from "../../utils/services"
 import { useEffect, useState } from "react"
 import { Nickname } from "../nick/Nickname.jsx"
 import { useNavigate } from "react-router-dom"
+import avatar from "../../assets/avatar.jpg"
 
 export function AllUsers() {
     const [users, setUsers] = useState([])
@@ -50,12 +51,14 @@ export function AllUsers() {
     }
 
     return (
-        <>
+        <div>
             {
                 users?.map((user) => (
                     <div>
                         <div>
-                            <img src="" alt="аватар" />
+                            <div>
+                                <img src={avatar} alt="аватар" />
+                            </div>
                             <h6 onClick={() => navigate(`../../../user/${user._id}`)}><Nickname id={user._id} /></h6>
                         </div>
                         <button onClick={() => click(user._id)}>добавить</button>
@@ -64,9 +67,9 @@ export function AllUsers() {
                 )
             }
             {
-                users.length == 0 && <div>В данном списке еще нет пользователей.</div> 
+                users.length == 0 && <div>В данном списке еще нет пользователей.</div>
             }
-        </>
+        </div>
     )
 
 }

@@ -1,14 +1,154 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  font-family: Montserrat, sans-serif;
 
-  color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  background: linear-gradient(180deg, rgba(105, 12, 113, 1) 0%, rgba(44, 51, 72, 1) 100%);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --blue: #212636;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  /* overflow: hidden; */
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: normal;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: 100;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+button {
+  font-size: 16px;
+  font-weight: 400;
+  padding: 10px 51px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #8F00FF 0%, #560099 100%);
+  color: white;
+}
+
+button:disabled,
+button[disabled] {
+  background: #B3B3B3;
+}
+
+a {
+  color: white;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+input[type="checkbox"] {
+  margin: 3px 10px 0 0;
+}
+
+label {
+  font-size: 14px;
+  color: #B3B3B3;
+}
+
+nav {
+  background: var(--blue);
+  width: 350px;
+  flex-direction: column;
+}
+
+.flex {
+  display: flex;
+}
+
+.height {
+  height: 100vh;
+}
+
+.width {
+  width: 100vw;
+}
+
+.formAuth {
+  background: var(--blue);
+  align-items: center;
+}
+
+.form {
+  margin: auto auto auto 160px;
+  flex-direction: column;
+  gap: 23px;
+}
+
+.bottomLine {
+  padding: 13px 20px;
+  width: 460px;
+  font-size: 20px;
+  color: #BDBDBD;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+}
+
+.formAuthButtons {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.formCheck {
+  align-items: start;
+}
+
+.topSidebar {
+  padding: 19px 0 0 30px;
+}
+
+.avatarSidebar {
+  width: 33px;
+  height: 33px;
+  border: 1px solid #8F00FF;
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.logoSidebar {
+  margin-left: 53px;
+  width: 118px;
+  height: 30px;
+}
+
+.locationSidebar {
+
 }

@@ -3,6 +3,7 @@ import { baseUrl, getRequest, postRequest } from "../../utils/services";
 import { useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Nickname } from "../nick/Nickname";
+import avatar from "../../assets/avatar.jpg"
 
 export function UserProfile() {
     const [user, setUser] = useState(null)
@@ -104,9 +105,11 @@ export function UserProfile() {
     }
 
     return (
-        <>
+        <div>
             <h2><Nickname id={path} /></h2>
-            <img src="" alt="аватар" />
+            <div>
+                <img src={avatar} alt="аватар" />
+            </div>
             <p>в colloquy с {createdAt}</p>
             {
                 friend ?
@@ -129,7 +132,7 @@ export function UserProfile() {
                         :
                         <></>
             }
-        </>
+        </div>
     )
 
 }

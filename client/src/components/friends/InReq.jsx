@@ -3,6 +3,7 @@ import { baseUrl, getRequest } from "../../utils/services"
 import { useEffect, useState } from "react"
 import { Nickname } from "../nick/Nickname.jsx"
 import { useNavigate } from "react-router-dom"
+import avatar from "../../assets/avatar.jpg"
 
 export function InReq() {
     const [followers, setFollowers] = useState([])
@@ -27,12 +28,14 @@ export function InReq() {
     }
 
     return (
-        <>
+        <div>
             {
                 followers?.map((user) => (
                     <div>
                         <div>
-                            <img src="" alt="аватар" />
+                            <div>
+                                <img src={avatar} alt="аватар" />
+                            </div>
                             <h6 onClick={() => navigate(`../../../user/${user}`)}><Nickname id={user} /></h6>
                         </div>
                         <button onClick={() => actionWithRequest("addFriend", user)}>принять</button>
@@ -44,7 +47,7 @@ export function InReq() {
             {
                 followers.length == 0 && <div>В данном списке еще нет пользователей.</div>
             }
-        </>
+        </div>
     )
 
 }

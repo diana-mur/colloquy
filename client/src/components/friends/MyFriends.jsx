@@ -3,6 +3,7 @@ import { baseUrl, getRequest } from "../../utils/services"
 import { Link, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { Nickname } from "../nick/Nickname.jsx"
+import avatar from "../../assets/avatar.jpg"
 
 export function MyFriends() {
     const [friends, setFriends] = useState([])
@@ -25,12 +26,14 @@ export function MyFriends() {
     }
 
     return (
-        <>
+        <div>
             {
                 friends?.map((user) => (
                     <div>
                         <div>
-                            <img src="" alt="аватар" />
+                            <div>
+                                <img src={avatar} alt="аватар" />
+                            </div>
                             <h6 onClick={() => navigate(`../../../user/${user}`)}><Nickname id={user} /></h6>
                         </div>
                         <button onClick={() => linkToChat(user)}>написать</button>
@@ -40,6 +43,6 @@ export function MyFriends() {
             {
                 friends.length == 0 && <div>В данном списке еще нет пользователей.</div>
             }
-        </>
+        </div>
     )
 }

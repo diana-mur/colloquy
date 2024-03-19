@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { baseUrl, getRequest } from "../utils/services"
 import { Nickname } from "../components/nick/Nickname"
 import { logOut } from "../redux/authSlice"
+import avatar from "../assets/avatar.jpg"
 
 export function MyProfile() {
     const [createdAt, setCreatedAt] = useState('')
@@ -30,16 +31,16 @@ export function MyProfile() {
     }
 
     return (
-        <>
+        <div>
             <h2><Nickname id={userId} /></h2>
             <div>
-                <img src="" alt="аватар" />
+                <img src={avatar} alt="аватар" />
             </div>
             <div>
                 <p>в colloquy с {createdAt}</p>
             </div>
             <button>Изменить</button>
             <button onClick={() => dispatch(logOut())}>Выйти</button>
-        </>
+        </div>
     )
 }

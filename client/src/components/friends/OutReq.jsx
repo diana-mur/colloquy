@@ -3,6 +3,7 @@ import { baseUrl, getRequest } from "../../utils/services"
 import { useEffect, useState } from "react"
 import { Nickname } from "../nick/Nickname.jsx"
 import { useNavigate } from "react-router-dom"
+import avatar from "../../assets/avatar.jpg"
 
 export function OutReq() {
     const [following, setFollowing] = useState([])
@@ -27,12 +28,14 @@ export function OutReq() {
     }
 
     return (
-        <>
+        <div>
             {
                 following.map((user) => (
                     <div key={user}>
                         <div>
-                            <img src="" alt="аватар" />
+                            <div>
+                                <img src={avatar} alt="аватар" />
+                            </div>
                             <h6 onClick={() => navigate(`../../../user/${user}`)}><Nickname id={user} /></h6>
                         </div>
                         <button onClick={() => unsubscribe(user)}>отменить</button>
@@ -43,7 +46,7 @@ export function OutReq() {
             {
                 following.length == 0 && <div>В данном списке еще нет пользователей.</div>
             }
-        </>
+        </div>
     )
 
 }

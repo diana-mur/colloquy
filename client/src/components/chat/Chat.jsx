@@ -104,7 +104,7 @@ export function Chat() {
     }
 
     return (
-        <>
+        <div>
             <p onClick={() => navigate(`../../../user/${recId}`)}><Nickname id={recId} /></p>
             {
                 messagesList.map(message => (
@@ -114,6 +114,6 @@ export function Chat() {
             <input type="text" value={textMessage} onChange={e => setTextMessage(e.target.value)} />
             <button onClick={() => sendTextMessage(textMessage, userId, path)}>Отправить</button>
 
-        </>
+        </div>
     )
 }

@@ -13,7 +13,7 @@ import { AllUsers } from "./components/friends/AllUsers.jsx";
 import { MyProfile } from "./pages/MyProfile.jsx";
 import { EditProfile } from "./pages/EditProfile.jsx";
 import { Reg } from "./pages/Reg.jsx";
-import "./App.css"
+import "./index.css"
 
 const router = createBrowserRouter([
   {
@@ -33,10 +33,10 @@ const router = createBrowserRouter([
 const authRouter = createBrowserRouter([
   {
     path: "/",
-    element: <>
+    element: <div className="flex">
       <SideBar />
       <Outlet />
-    </>,
+    </div>,
     children: [
 
       {
@@ -52,8 +52,8 @@ const authRouter = createBrowserRouter([
       {
         path: "/messages",
         element: <>
-          <Messenger />
           <Outlet />
+          <Messenger />
         </>,
         children: [
           {
@@ -71,8 +71,8 @@ const authRouter = createBrowserRouter([
       {
         path: "/users",
         element: <>
-          <Friends />
           <Outlet />
+          <Friends />
         </>,
         children: [
           {
